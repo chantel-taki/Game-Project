@@ -4,8 +4,8 @@ class Obstacles {
         this.height = 25;
         this.width = 25;
         this.x = width;
-        //this.y = random(0, height - this.height);
-        this.img = createImg("assets/corona-4881111_1280.png");
+        this.y = 300
+        this.img = createImg("assets/corona.png", this.x, this.y, [10], [10]);
     }
     display(){
         this.x--;

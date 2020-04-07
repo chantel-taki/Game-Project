@@ -13,7 +13,7 @@ class Game {
         this.background.display();
         this.player.display();
 
-       if (frameCount % 1000 === 0) {
+       if (frameCount % 700 === 0) {
            this.obstacles.push(new Obstacles());
           }
           this.obstacles.forEach((obstacle) => {

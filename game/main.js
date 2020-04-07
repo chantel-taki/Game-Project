@@ -23,7 +23,7 @@ function setup() {
     // W key
     if (keyCode === 87) {
       game.player.jump();
-     // game.player.img = createImg("assets/Player Jumping.gif");
+   //   game.player.img = createImg("assets/Player Jumping.gif");
       clear();
     }
     // S key
