@@ -1,6 +1,6 @@
 class Player {
     constructor(){
-        this.img = createImg("assets/Player Running.gif");
+        this.img = createImg("assets/PlayerRunning.gif");
         this.velocity = 0;
         this.gravity = 0.5;
         //this.jmpImg = createImg("assets/Player Jumping.gif");
@@ -10,7 +10,7 @@ class Player {
         this.height = this.img.height;
         this.width = this.img.width;
         this.x = 100;
-        this.y = 500;
+        this.y = 400;
     }
     display() {
         this.img.position(this.x, this.y);

@@ -2,6 +2,7 @@
 class Game {
     constructor(){
         this.obstacles = [];
+        this.people = [];
     }
     initialize(){
         this.background = new Background();
@@ -22,6 +23,16 @@ class Game {
           this.obstacles = this.obstacles.filter((obstacle) => {
             return !obstacle.collision(this.player);
           }); 
+
+          if (frameCount % 900 === 0) {
+            this.people.push(new People());
+           }
+           this.people.forEach((person) => {
+             person.display();
+           });
+           this.people = this.people.filter((person) => {
+             return !person.collision(this.player);
+           }); 
     }
     setup(){
         this.player.setup();
