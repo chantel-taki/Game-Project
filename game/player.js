@@ -3,7 +3,7 @@ class Player {
         this.img = createImg("assets/Player Running.gif");
         this.velocity = 0;
         this.gravity = 0.5;
-      //  this.jmpImg = createImg("assets/Player Jumping.gif");
+        //this.jmpImg = createImg("assets/Player Jumping.gif");
 
     }
     setup(){
@@ -14,6 +14,7 @@ class Player {
     }
     display() {
         this.img.position(this.x, this.y);
+       // if (Player.jump){this.img = createImg("assets/Player Jumping.gif");}
         this.velocity += this.gravity;
         this.y += this.velocity;
         if (this.y > height - this.height) {
@@ -22,12 +23,12 @@ class Player {
     }
     jump(){
         this.velocity = -15;
-      //  this.jmpImg.position(this.x, this.y);
+        clear();
+        //this.img = createImg("assets/Player Jumping.gif");
 
     }
     duck(){
         console.log("ducking");
-        this.y += 30;
-        
+        this.y += 40;
     }
 }

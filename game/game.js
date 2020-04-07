@@ -1,7 +1,7 @@
 
 class Game {
     constructor(){
-       
+        this.obstacles = [];
     }
     initialize(){
         this.background = new Background();
@@ -13,12 +13,15 @@ class Game {
         this.background.display();
         this.player.display();
 
-      //  if (frameCount % 80 === 0) {
-         //   this.obstacles.display();
-       //   }
-        /*  this.obstacles = this.obstacles.filter((obstacle) => {
+       if (frameCount % 1000 === 0) {
+           this.obstacles.push(new Obstacles());
+          }
+          this.obstacles.forEach((obstacle) => {
+            obstacle.display();
+          });
+          this.obstacles = this.obstacles.filter((obstacle) => {
             return !obstacle.collision(this.player);
-          }); */
+          }); 
     }
     setup(){
         this.player.setup();

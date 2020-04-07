@@ -3,14 +3,14 @@ class Obstacles {
     constructor(){
         this.height = 25;
         this.width = 25;
-        this.x = this.width;
-        this.y = random(0, height - this.height);
+        this.x = width;
+        //this.y = random(0, height - this.height);
+        this.img = createImg("assets/corona-4881111_1280.png");
     }
     display(){
         this.x--;
-        this.img = loadImage("assets/corona-4881111_1280.png");
+        this.img.position(this.x, this.y);
     }
-
 
     collision(player) {
         let leftSide = this.x;
