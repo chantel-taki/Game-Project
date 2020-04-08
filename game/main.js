@@ -5,23 +5,21 @@ let startImg;
 //let img;
 function preload (){
  game.initialize();
-this.startImg = createImg("assets/Start Screen.png");
+//this.startImg = createImg("assets/Start Screen.png");
 }
 
 function setup() { 
   createCanvas(1920, 1080);
+
+  //noLoop();
   game.setup();
-  noLoop();
   } 
   
   function draw() { 
     if (game.startGame === true){
       game.display();
-      noLoop();
-    } else{
-     image(this.startImg, 0, 0);
     }
-  
+
   }
 
   function keyPressed(){
@@ -34,5 +32,10 @@ function setup() {
     // S key
     if (keyCode === 83) {
       game.player.duck();
+    }
+
+    if (keyCode === 13) {
+      game.startGame = true;
+      console.log("start");
     }
   }

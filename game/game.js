@@ -11,8 +11,12 @@ class Game {
 
     initialize(){
       //initialize/generate the player and background
-        this.background = new Background();
-        this.player = new Player();
+        
+       // if(this.startGame = true){
+          this.player = new Player();
+          this.background = new Background();
+      //  }
+        
     }
 
     // setup the player in game
@@ -21,15 +25,12 @@ class Game {
          }
 
     display(){
-      
-        
+       //clear the display after movements
+        clear();
         //display the background & player
-        if (this.startGame === true){
         this.background.display();
         this.player.display();
-        //clear the display after movements
-        clear();
-        
+
         //push obstacles  to array at frame count
         if (frameCount % 900 === 0) {
           this.obstacles.push(new Obstacles());
@@ -84,6 +85,5 @@ class Game {
                   if(this.endGame){
                     noLoop();
                   }
-                } 
               }
             }
