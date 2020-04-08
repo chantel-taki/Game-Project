@@ -5,7 +5,7 @@ let startImg;
 //let img;
 function preload (){
  game.initialize();
- startImg = createImg("assets/Start Screen.png").hide();
+ startImg = createImg("assets/StartScreen.gif").hide();
 }
 
 function setup() { 
@@ -31,7 +31,7 @@ function setup() {
     // W key
     if (keyCode === 87) {
       game.player.jump();
-   //   game.player.img = createImg("assets/Player Jumping.gif");
+    // game.player.img = createImg("assets/Player Jumping.gif").show();
       clear();
     }
     // S key
