@@ -26,7 +26,7 @@ class Game {
 
     display(){
        //clear the display after movements
-        clear();
+        //clear();
         //display the background & player
         this.background.display();
         this.player.display();

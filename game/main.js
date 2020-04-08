@@ -5,7 +5,7 @@ let startImg;
 //let img;
 function preload (){
  game.initialize();
-//this.startImg = createImg("assets/Start Screen.png");
+ startImg = createImg("assets/Start Screen.png").hide();
 }
 
 function setup() { 
@@ -16,8 +16,13 @@ function setup() {
   } 
   
   function draw() { 
-    if (game.startGame === true){
+    clear();
+    if (game.startGame){
       game.display();
+    } else {
+      //createImg("assets/Start Screen.png");
+      //image(startImg, 0, 0);
+      startImg.show();
     }
 
   }
@@ -36,6 +41,7 @@ function setup() {
 
     if (keyCode === 13) {
       game.startGame = true;
+      startImg.hide();
       console.log("start");
     }
   }
