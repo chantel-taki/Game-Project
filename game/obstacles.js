@@ -5,11 +5,11 @@ class Obstacles {
         this.width = 25;
         this.x = width;
         this.y = 400;
-        this.img = createImg("assets/corona.png");
+        this.img = createImg("assets/corona.png").hide();
     }
     display(){
         this.x--;
-        this.img.position(this.x, this.y);
+        this.img.position(this.x, this.y).show();
     }
 
     collision(player) {
@@ -39,11 +39,11 @@ class People {
         this.width = 25;
         this.x = width;
         this.y = 600;
-        this.img = createImg("assets/PersonIdle.gif");
+        this.img = createImg("assets/PersonIdle.gif").hide();
     }
     display(){
         this.x--;
-        this.img.position(this.x, this.y);
+        this.img.position(this.x, this.y).show();
     }
     collision(player) {
         let leftSide = this.x;

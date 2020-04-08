@@ -3,7 +3,7 @@ class Player {
         this.img = createImg("assets/PlayerRunning.gif").hide();
         this.velocity = 0;
         this.gravity = 0.5;
-        this.jmpImg = createImg("assets/Player Jumping.gif").hide();
+        this.jmpImg = createImg("assets/PlayerJumping.gif").hide();
 
     }
     //setup player
@@ -36,9 +36,5 @@ class Player {
     duck(){
         console.log("ducking");
         this.y += 40;
-    }
-    //death function to be called before game over
-    death(){
-        console.log("dead");
     }
 }

@@ -2,27 +2,32 @@
 let game = new Game();
 //starting screen
 let startImg;
+let endImg;
 //let img;
 function preload (){
  game.initialize();
  startImg = createImg("assets/StartScreen.gif").hide();
+ endImg = createImg("assets/EndScreen.gif").hide();
 }
 
 function setup() { 
   createCanvas(1920, 1080);
-
-  //noLoop();
   game.setup();
   } 
   
   function draw() { 
     clear();
-    if (game.startGame){
+    if (game.startGame && !game.endGame){
       game.display();
-    } else {
-      //createImg("assets/Start Screen.png");
-      //image(startImg, 0, 0);
+    }  else if (!game.startGame && !game.endGame){
       startImg.show();
+    }
+   if (game.endGame){
+      endImg.show();
+      game.player.img.hide();
+      startImg.hide();
+     // game.items.img.hide();
+    //  game.obstacles.img.hide();
     }
 
   }
@@ -44,4 +49,6 @@ function setup() {
       startImg.hide();
       console.log("start");
     }
+
+   
   }

@@ -5,11 +5,11 @@ class Items {
         this.width = 40;
         this.x = width;
         this.y = 1000;
-        this.img = createImg("assets/TP.png");
+        this.img = createImg("assets/TP.png").hide();
     }
     display(){
         this.x--;
-        this.img.position(this.x, this.y);
+        this.img.position(this.x, this.y).show();
     }
     collect(player) {
         let leftSide = this.x;
@@ -26,6 +26,7 @@ class Items {
         let collectY = (topSide > playerTop && topSide < playerBottom) || (bottomSide > playerTop && bottomSide < playerBottom);
 
         let collected = collectX && collectY;
+
         return collected;
 
 
