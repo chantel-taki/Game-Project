@@ -1,22 +1,27 @@
 
 let game = new Game();
+//starting screen
+let startImg;
 //let img;
 function preload (){
  game.initialize();
-  //img1 = loadImage("assets/corona-4881111_1280.png");
+this.startImg = createImg("assets/Start Screen.png");
 }
 
 function setup() { 
   createCanvas(1920, 1080);
   game.setup();
-    //image(img1, 0, 0);
+  noLoop();
   } 
   
   function draw() { 
-  // background(220);
-   //image(img,0,0);
-   frameRate(250);
-   game.display();
+    if (game.startGame === true){
+      game.display();
+      noLoop();
+    } else{
+     image(this.startImg, 0, 0);
+    }
+  
   }
 
   function keyPressed(){
