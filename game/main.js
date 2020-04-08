@@ -2,7 +2,7 @@
 let game = new Game();
 //let img;
 function preload (){
-   game.initialize();
+ game.initialize();
   //img1 = loadImage("assets/corona-4881111_1280.png");
 }
 

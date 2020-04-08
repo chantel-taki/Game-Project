@@ -31,4 +31,7 @@ class Player {
         console.log("ducking");
         this.y += 40;
     }
+    death(){
+        console.log("dead");
+    }
 }
