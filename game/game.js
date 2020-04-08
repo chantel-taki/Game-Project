@@ -4,6 +4,7 @@ class Game {
       // Creates arrays to push obstacles/people
         this.obstacles = [];
         this.people = [];
+        this.items = [];
     }
 
     initialize(){
@@ -12,7 +13,7 @@ class Game {
         this.player = new Player();
     }
 
-    // setup the player 
+    // setup the player in game
     setup(){
         this.player.setup();
          }
@@ -25,7 +26,7 @@ class Game {
         this.player.display();
         
         //push obstacles  to array at frame count
-           if (frameCount % 800 === 0) {
+           if (frameCount % 900 === 0) {
            this.obstacles.push(new Obstacles());
           }
           this.obstacles.forEach((obstacle) => {
@@ -42,7 +43,7 @@ class Game {
           }); 
 
           //push people to array at frame count
-          if (frameCount % 1000 === 0) {
+          if (frameCount % 1020 === 0) {
             this.people.push(new People());
            }
            this.people.forEach((person) => {
@@ -56,7 +57,24 @@ class Game {
            } else{
             return !person.collision(this.player);
            }
-           }); 
-        }
+           });
+
+                  //push items to array at frame count
+                  if (frameCount % 1000 === 0) {
+                    this.items.push(new Items());
+                   }
+                   this.items.forEach((item) => {
+                     item.display();
+                   });
+        
+                   // check if collected by player, if so, add to score
+                   this.items = this.items.filter((item) => { 
+                     if (item.collect(this.player)){
+                      console.log("collected");
+                   } else{
+                    return !item.collect(this.player);
+                   }
+                   }); 
+                }
 
 }
