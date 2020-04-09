@@ -6,6 +6,9 @@ let endImg;
 
 
 function preload (){
+  soundFormats('mp3', 'ogg');
+ mySound = loadSound('assets/happy.mp3')
+ //coughSound = loadSound('assets/old-man-cough.flac')
  game.initialize();
  startImg = createImg("assets/StartScreen.gif").hide();
  endImg = createImg("assets/EndScreen.gif").hide();
@@ -14,6 +17,9 @@ function preload (){
 function setup() { 
   createCanvas(1920, 1080);
   game.setup();
+  mySound.play();
+  mySound.loop();
+
   } 
   
   function draw() { 
@@ -27,18 +33,18 @@ function setup() {
       endImg.show();
       game.player.img.hide();
       startImg.hide();
+     // coughSound.play();
+     // coughSound.loop();
      // game.background.images.splice(0, 4)
      // game.background.images.src.forEach(element => {
        // element.hide();
      // });
      // game.items.splice(0, game.items.length);
-      
      /* game.people.img.forEach(element => {
         element.hide();
       }); */
     }
-    
-
+ 
   }
 
   function keyPressed(){

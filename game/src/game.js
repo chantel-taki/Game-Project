@@ -72,19 +72,30 @@ class Game {
                  if (frameCount % 400 === 0) {
                    this.items.push(new Items());
                   }
-                  this.items.forEach((item) => {
+                
+                  
+                    this.items.forEach((item) => {
                     item.display();
                   });
        
                   // check if collected by player, if so, add to score
-                  this.items = this.items.filter((item) => { 
+                  /*this.items = this.items.filter((item, index) => { 
                     if (item.collect(this.player)){
                      console.log("collected");
+                     console.log(this.items, this.items[index])
+                     this.items.splice(index, 1);
                      this.score++;
                   } else{
                    return !item.collect(this.player);
                   }
-                  }); 
+                  }); */
+                  this.items.forEach((item, index) => { 
+                    if (item.collect(this.player)){
+                     console.log("collected");
+                     this.items.splice(index, 1);
+                     this.score++;
+                  }
+                  })
 
                   if(this.endGame){
                     noLoop();
