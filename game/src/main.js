@@ -3,7 +3,8 @@ let game = new Game();
 //starting screen
 let startImg;
 let endImg;
-//let img;
+
+
 function preload (){
  game.initialize();
  startImg = createImg("assets/StartScreen.gif").hide();
@@ -26,9 +27,17 @@ function setup() {
       endImg.show();
       game.player.img.hide();
       startImg.hide();
-     // game.items.img.hide();
-    //  game.obstacles.img.hide();
+     // game.background.images.splice(0, 4)
+     // game.background.images.src.forEach(element => {
+       // element.hide();
+     // });
+     // game.items.splice(0, game.items.length);
+      
+     /* game.people.img.forEach(element => {
+        element.hide();
+      }); */
     }
+    
 
   }
 
@@ -48,6 +57,9 @@ function setup() {
       game.startGame = true;
       startImg.hide();
       console.log("start");
+    }
+    if (keyCode === 13 && game.endGame === true) {
+      window.location.reload();
     }
 
    

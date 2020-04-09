@@ -7,6 +7,7 @@ class Game {
         this.items = [];
         this.startGame = false;
         this.endGame = false;
+        this.score = 0;
     }
 
     initialize(){
@@ -30,6 +31,8 @@ class Game {
         //display the background & player
         this.background.display();
         this.player.display();
+        textSize(100);
+        text("Score: " + this.score, 15, 80);
 
         //push obstacles  to array at frame count
         if (frameCount % 1500 === 0) {
@@ -66,7 +69,7 @@ class Game {
           });
 
                  //push items to array at frame count
-                 if (frameCount % 1000 === 0) {
+                 if (frameCount % 400 === 0) {
                    this.items.push(new Items());
                   }
                   this.items.forEach((item) => {
@@ -77,6 +80,7 @@ class Game {
                   this.items = this.items.filter((item) => { 
                     if (item.collect(this.player)){
                      console.log("collected");
+                     this.score++;
                   } else{
                    return !item.collect(this.player);
                   }
